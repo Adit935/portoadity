@@ -22,7 +22,7 @@ export default function Statistics() {
               className={`bg-white/10 backdrop-blur-md rounded-2xl p-8 text-center transition-all duration-700 hover:bg-white/20 hover:scale-110 cursor-pointer ${isInView ? 'animate-scale-in' : 'opacity-0 scale-90'}`}
               style={{ transitionDelay: `${0.1 * index}s` }}
             >
-              <div className="text-5xl mb-4">{stat.icon}</div>
+              <div className="text-3xl sm:text-4xl md:text-5xl mb-4">{stat.icon}</div>
               <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
               <div className="text-white/80 font-medium">{stat.label}</div>
             </div>

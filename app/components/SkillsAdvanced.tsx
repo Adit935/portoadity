@@ -22,7 +22,7 @@ export default function SkillsAdvanced() {
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 bg-white" ref={ref}>
       <div className="max-w-6xl mx-auto">
-        <h2 className={`text-4xl font-bold text-black mb-4 text-center transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>
+        <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 text-center transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>
           Skills & Expertise
         </h2>
         <p className={`text-zinc-600 text-center mb-16 max-w-2xl mx-auto transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.1s' }}>

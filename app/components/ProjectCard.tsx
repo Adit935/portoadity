@@ -13,7 +13,7 @@ export default function ProjectCard({ title, description, tags, link, featured, 
   return (
     <div className={`group relative bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2 ${featured ? 'lg:col-span-1 lg:row-span-1' : ''}`}>
       {image && (
-        <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-zinc-200 to-zinc-300">
+        <div className="relative w-full h-32 sm:h-40 md:h-48 overflow-hidden bg-gradient-to-br from-zinc-200 to-zinc-300">
           <Image
             src={image}
             alt={title}
