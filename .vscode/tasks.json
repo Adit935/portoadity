@@ -1,0 +1,41 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "npm: dev",
+			"type": "shell",
+			"windows": {
+				"command": "cmd",
+				"args": ["/c", "npm", "run", "dev"]
+			},
+			"isBackground": true,
+			"problemMatcher": {
+				"pattern": {
+					"regexp": "^.*$",
+					"line": 1,
+					"file": 1,
+					"location": 1,
+					"message": 1
+				},
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": "^.*ready .*",
+					"endsPattern": "^.*ready .*"
+				}
+			}
+		},
+		{
+			"label": "npm: build",
+			"type": "shell",
+			"windows": {
+				"command": "cmd",
+				"args": ["/c", "npm", "run", "build", "--", "--webpack"]
+			},
+			"isBackground": false,
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
