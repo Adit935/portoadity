@@ -19,6 +19,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -142,6 +146,26 @@ body {
   }
 }
 
+@keyframes fade-in-smooth {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up-smooth {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Animation Classes */
 .animate-fade-in {
   animation: fadeIn 0.8s ease-in-out;
@@ -195,6 +219,14 @@ body {
 
 .animate-spin-slow {
   animation: spin-slow 8s linear infinite;
+}
+
+.animate-fade-in-smooth {
+  animation: fade-in-smooth 0.5s ease-out;
+}
+
+.animate-slide-up-smooth {
+  animation: slide-up-smooth 0.5s ease-out;
 }
 
 /* Transition Classes */

@@ -4,7 +4,7 @@ import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
 const skillCategories = [
   {
-    category: 'Design & UI/UX',
+    category: 'Hard Skills',
     icon: '🎨',
     skills: ['Figma', 'canva', 'Capcut', 'Alight motion', ],
   },
