@@ -34,7 +34,7 @@ export default function Experience() {
     <section id="experience" className="py-20 px-4 sm:px-6 bg-gradient-to-br from-zinc-50 to-white" ref={ref}>
       <div className="max-w-4xl mx-auto">
         <h2 className={`text-3xl font-bold text-black mb-12 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>
-          Pengalaman Kerja
+          Pengalaman
         </h2>
         
         <div className="space-y-6">
