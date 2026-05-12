@@ -8,9 +8,9 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 px-4 sm:px-6 bg-white" ref={ref}>
       <div className="max-w-4xl mx-auto">
-        <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 text-center transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>Ready to Work Together?</h2>
+        <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 text-center transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>Siap Bekerja Sama?</h2>
         <p className={`text-zinc-600 mb-12 max-w-2xl mx-auto text-center transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.1s' }}>
-          I'm always interested in hearing about new projects and opportunities. Let's create something amazing together!
+          Saya selalu tertarik untuk mendiskusikan proyek dan peluang baru. Mari ciptakan sesuatu yang luar biasa bersama!
         </p>
           <div className={`bg-zinc-50 border border-zinc-200 rounded-2xl p-6 sm:p-8 md:p-12 transition-all duration-700 ${isInView ? 'animate-scale-in' : 'opacity-0 scale-90'}`}>
           <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -31,7 +31,7 @@ export default function Contact() {
             <div className="flex items-start gap-4">
               <div className="text-3xl">📍</div>
               <div>
-                <h3 className="font-bold text-black mb-1">Location</h3>
+                <h3 className="font-bold text-black mb-1">Lokasi</h3>
                 <p className="text-zinc-600">Kawali</p>
               </div>
             </div>

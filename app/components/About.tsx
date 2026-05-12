@@ -12,7 +12,7 @@ export default function About() {
 
     <section id="about" className="py-20 px-4 sm:px-6 bg-white" ref={ref}>
       <div className="max-w-4xl mx-auto">
-        <h2 className={`text-3xl font-bold text-black mb-12 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>About Me</h2>
+        <h2 className={`text-3xl font-bold text-black mb-12 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>Tentang Saya</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Profile Photo */}

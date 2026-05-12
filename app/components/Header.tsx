@@ -12,19 +12,19 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6 md:gap-8">
             <a href="#about" className="text-zinc-700 hover:text-black transition-smooth font-semibold hover:scale-110 hover:-translate-y-1">
-              About
-            </a>
-            <a href="#skills" className="text-zinc-700 hover:text-black transition-smooth font-semibold hover:scale-110 hover:-translate-y-1">
-              Skills
+              Tentang
             </a>
             <a href="#experience" className="text-zinc-700 hover:text-black transition-smooth font-semibold hover:scale-110 hover:-translate-y-1">
-              Experience
+              Pengalaman
+            </a>
+            <a href="#skills" className="text-zinc-700 hover:text-black transition-smooth font-semibold hover:scale-110 hover:-translate-y-1">
+              Keahlian
             </a>
             <a href="#projects" className="text-zinc-700 hover:text-black transition-smooth font-semibold hover:scale-110 hover:-translate-y-1">
-              Projects
+              Proyek
             </a>
             <a href="#contact" className="px-4 sm:px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full transition-smooth font-bold shadow-lg shadow-blue-500/50 hover:shadow-xl hover:scale-105">
-              Contact
+              Kontak
             </a>
           </div>
 
@@ -45,19 +45,19 @@ export default function Header() {
           <div className="md:hidden absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-white/95 backdrop-blur-xl border border-white/50 rounded-2xl px-6 py-4 shadow-lg min-w-[200px]">
             <div className="flex flex-col gap-4">
               <a href="#about" className="text-zinc-700 hover:text-black transition-smooth font-semibold" onClick={() => setIsMenuOpen(false)}>
-                About
-              </a>
-              <a href="#skills" className="text-zinc-700 hover:text-black transition-smooth font-semibold" onClick={() => setIsMenuOpen(false)}>
-                Skills
+                Tentang
               </a>
               <a href="#experience" className="text-zinc-700 hover:text-black transition-smooth font-semibold" onClick={() => setIsMenuOpen(false)}>
-                Experience
+                Pengalaman
+              </a>
+              <a href="#skills" className="text-zinc-700 hover:text-black transition-smooth font-semibold" onClick={() => setIsMenuOpen(false)}>
+                Keahlian
               </a>
               <a href="#projects" className="text-zinc-700 hover:text-black transition-smooth font-semibold" onClick={() => setIsMenuOpen(false)}>
-                Projects
+                Proyek
               </a>
               <a href="#contact" className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full transition-smooth font-bold text-center shadow-lg shadow-blue-500/50" onClick={() => setIsMenuOpen(false)}>
-                Contact
+                Kontak
               </a>
             </div>
           </div>

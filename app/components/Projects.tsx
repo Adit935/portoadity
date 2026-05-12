@@ -55,8 +55,8 @@ export default function Projects() {
     <>
       <section id="projects" className="py-20 px-4 sm:px-6 bg-white" ref={ref}>
         <div className="max-w-6xl mx-auto">
-          <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>Featured Projects</h2>
-          <p className={`text-zinc-600 mb-16 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.1s' }}>Showcase of my best work and successful projects</p>
+          <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>Proyek Unggulan</h2>
+          <p className={`text-zinc-600 mb-16 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.1s' }}>Pameran karya terbaik dan proyek yang sukses</p>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {projects.map((project, index) => (
               <div key={index} className={`transition-all duration-700 ${isInView ? 'animate-scale-in' : 'opacity-0 scale-90'}`} style={{ transitionDelay: `${0.05 * index}s` }}>

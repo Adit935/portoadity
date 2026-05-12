@@ -23,10 +23,10 @@ export default function SkillsAdvanced() {
     <section id="skills" className="py-20 px-4 sm:px-6 bg-white" ref={ref}>
       <div className="max-w-6xl mx-auto">
         <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 text-center transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>
-          Skills & Expertise
+          Keahlian
         </h2>
         <p className={`text-zinc-600 text-center mb-16 max-w-2xl mx-auto transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.1s' }}>
-          A comprehensive set of technical and soft skills developed through years of experience
+          Kumpulan keterampilan teknis dan non-teknis yang dikembangkan melalui pengalaman
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillCategories.map((category, idx) => (
