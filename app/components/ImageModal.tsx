@@ -38,7 +38,7 @@ export default function ImageModal({ isOpen, image, title, onClose }: ImageModal
     };
   }, [isOpen, onClose]);
 
-  if (!isVisible) return null;
+  if (!isVisible || !image) return null;
 
   return (
     <div
