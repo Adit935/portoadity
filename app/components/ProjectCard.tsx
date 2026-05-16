@@ -14,44 +14,52 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ title, description, tags, link, featured, image, onImageClick }: ProjectCardProps) {
   return (
-    <div className={`group relative bg-white border border-zinc-200 rounded-2xl overflow-hidden hover:border-blue-500 transition-all duration-500 ease-out hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2 ${featured ? 'lg:col-span-1 lg:row-span-1' : ''}`}>
-      {image && (
-        <div className="relative w-full h-32 sm:h-40 md:h-48 overflow-hidden bg-gradient-to-br from-zinc-200 to-zinc-300 cursor-pointer active:scale-95 transition-transform duration-200" onClick={onImageClick}>
-          <Image
-            src={image}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-          />
-        </div>
-      )}
-      <div className="p-6">
-        {featured && (
-          <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white text-xs font-bold rounded-full animate-fade-in">
-            Featured
+    <div className="group h-full">
+      <div className="light-glass rounded-[2rem] flex flex-col w-full h-full overflow-hidden hover-lift border-white/60">
+        {image && (
+          <div className="relative w-full aspect-[4/3] overflow-hidden cursor-pointer" onClick={onImageClick}>
+            <Image
+              src={image}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+            />
+            {featured && (
+              <div className="absolute top-4 right-4 px-4 py-1.5 bg-white/90 backdrop-blur-md text-pink-600 rounded-full text-xs font-bold tracking-wide shadow-sm border border-white/50">
+                Unggulan
+              </div>
+            )}
+            {/* Colorful overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         )}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-out bg-gradient-to-r from-blue-500/5 to-purple-500/5 pointer-events-none"></div>
-        <div className="relative z-10">
-          <h3 className="text-2xl font-bold text-black mb-2 group-hover:text-blue-600 transition-colors duration-300">{title}</h3>
-          <p className="text-zinc-600 mb-4 line-clamp-2 transition-colors duration-300">{description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {tags.map((tag, index) => (
+        <div className="flex flex-col flex-1 p-8">
+          <h3 className="text-2xl font-black text-slate-800 mb-3 group-hover:text-blue-600 transition-colors">{title}</h3>
+          <p className="text-slate-600 mb-6 line-clamp-3 text-sm leading-relaxed font-medium">{description}</p>
+          
+          <div className="flex flex-wrap gap-2 mb-8 mt-auto">
+            {tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 text-xs bg-blue-50 text-blue-600 rounded-full border border-blue-200 group-hover:bg-blue-100 transition-all duration-300"
+                className="px-3 py-1 text-xs font-bold text-slate-500 bg-white/60 border border-white/80 rounded-full"
               >
                 {tag}
               </span>
             ))}
           </div>
+          
           {link && (
             <button
               onClick={onImageClick}
-              className="inline-flex items-center text-blue-600 hover:text-blue-700 font-bold transition-all duration-300 group-hover:translate-x-1 bg-none border-none cursor-pointer active:scale-95"
+              className="inline-flex items-center text-sm font-bold text-blue-600 hover:text-purple-600 transition-colors mt-auto w-fit group/btn"
             >
-              View Project <span className="ml-1 group-hover:translate-x-1 transition-all duration-300">→</span>
+              Lihat Detail 
+              <span className="ml-2 w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center group-hover/btn:bg-purple-50 group-hover/btn:translate-x-1 transition-all">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
             </button>
           )}
         </div>

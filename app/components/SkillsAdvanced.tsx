@@ -1,48 +1,58 @@
 'use client';
 
-import { useInViewAnimation } from '../hooks/useInViewAnimation';
-
 const skillCategories = [
   {
     category: 'Hard Skills',
-    icon: '🎨',
-    skills: ['Figma', 'canva', 'Capcut', 'Alight motion', ],
+    skills: ['Figma', 'Canva', 'Capcut', 'Alight motion'],
+    icon: (
+      <svg className="w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+      </svg>
+    ),
+    gradient: 'from-blue-500 to-cyan-400'
   },
- 
-   {
+  {
     category: 'Soft Skills',
-    icon: '💡',
-    skills: ['Kerja sama tim', 'Disiplin', 'komunikasi',],
+    skills: ['Kerja sama tim', 'Disiplin', 'Komunikasi'],
+    icon: (
+      <svg className="w-8 h-8 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+      </svg>
+    ),
+    gradient: 'from-purple-500 to-pink-400'
   },
 ];
 
 export default function SkillsAdvanced() {
-  const { ref, isInView } = useInViewAnimation();
-
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 bg-white" ref={ref}>
-      <div className="max-w-6xl mx-auto">
-        <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 text-center transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>
-          Keahlian
-        </h2>
-        <p className={`text-zinc-600 text-center mb-16 max-w-2xl mx-auto transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.1s' }}>
-          Kumpulan keterampilan teknis dan non-teknis yang dikembangkan melalui pengalaman
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section id="skills" className="py-24 px-6 relative">
+      <div className="max-w-5xl mx-auto">
+        <div className="mb-20 text-center fade-up-enter">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-white/50 border border-white/50 text-pink-600 font-bold text-xs tracking-widest uppercase mb-4 shadow-sm">Kompetensi</div>
+          <h3 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight">Keahlian <span className="text-gradient-vibrant">Utama</span></h3>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {skillCategories.map((category, idx) => (
-            <div
-              key={idx}
-              className={`bg-zinc-50 rounded-2xl p-8 transition-all duration-700 hover:shadow-2xl hover:scale-105 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}
-              style={{ transitionDelay: `${0.1 * idx}s` }}
-            >
-              <div className="text-4xl mb-4">{category.icon}</div>
-              <h3 className="text-xl font-bold text-black mb-6">{category.category}</h3>
-              <div className="space-y-3">
+            <div key={idx} className="light-glass p-10 hover-lift fade-up-enter group relative overflow-hidden" style={{animationDelay: `${0.1 * idx}s`}}>
+              {/* Subtle top border gradient */}
+              <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${category.gradient} opacity-50`}></div>
+
+              <div className="flex items-center gap-6 mb-8">
+                <div className="p-4 rounded-2xl bg-white shadow-sm border border-white/60 group-hover:scale-110 transition-transform">
+                  {category.icon}
+                </div>
+                <h3 className="text-3xl font-bold text-slate-800">{category.category}</h3>
+              </div>
+              
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, i) => (
-                  <div key={i} className="flex items-center gap-3 group cursor-pointer">
-                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full group-hover:scale-150 transition-all"></div>
-                    <span className="text-zinc-700 group-hover:text-blue-600 transition-all">{skill}</span>
-                  </div>
+                  <span 
+                    key={i} 
+                    className="px-5 py-2.5 rounded-full bg-white/80 border border-white/60 text-slate-700 font-semibold hover:bg-white hover:text-blue-600 hover:shadow-md transition-all cursor-default"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useInViewAnimation } from '../hooks/useInViewAnimation';
 import ProjectCard from "./ProjectCard";
 import ImageModal from "./ImageModal";
 
@@ -18,8 +17,8 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Web Rental motor",
-    description: "website rental motor dengan fitur lengkap seperti pemesanan online, manajemen inventaris, dan sistem pembayaran terintegrasi. Dibangun dengan teknologi modern untuk pengalaman pengguna yang optimal.",
-    tags: ["Php", "Mysql", "Draw.io"],
+    description: "Website rental motor dengan fitur lengkap seperti pemesanan online, manajemen inventaris, dan sistem pembayaran terintegrasi.",
+    tags: ["PHP", "MySQL", "Draw.io"],
     link: "#",
     image: "/images/image1.png",
     featured: true,
@@ -27,15 +26,15 @@ const projects: Project[] = [
   },
   {
     title: "Buku Induk",
-    description: "buku induk sekolah dengan fitur lengkap seperti manajemen data siswa, guru, dan kelas. Dibangun dengan teknologi modern untuk pengalaman pengguna yang optimal.",
-    tags: ["Figma", "draw.io", "laravel", "mysql"],
+    description: "Aplikasi buku induk sekolah dengan fitur lengkap seperti manajemen data siswa, guru, dan kelas.",
+    tags: ["Figma", "Draw.io", "Laravel", "MySQL"],
     link: "#",
     image: "/images/buku.png",
     category: 'Website',
   },
   {
     title: "Poster Parfum",
-    description: "poster parfum dengan desain yang menarik dan profesional. Dibuat menggunakan alat desain grafis seperti Canva atau Figma untuk menciptakan visual yang memikat dan sesuai dengan merek parfum.",
+    description: "Desain poster parfum yang menarik dan profesional untuk keperluan promosi produk.",
     tags: ["Canva", "Figma"],
     link: "#",
     image: "/images/califblue.png",
@@ -43,35 +42,32 @@ const projects: Project[] = [
     category: 'Desain',
   },
   {
-    title: "Poster Maulid nabi",
-    description: "poster maulid nabi dengan desain yang menarik dan profesional. Dibuat menggunakan alat desain grafis seperti Canva untuk menciptakan visual yang memikat dan sesuai dengan tema maulid nabi.",
+    title: "Poster Maulid Nabi",
+    description: "Desain poster peringatan Maulid Nabi dengan nuansa Islami yang modern dan elegan.",
     tags: ["Canva", "Pinterest"],
     link: "#",
     image: "/images/maulid.png",
     category: 'Desain',
   },
   {
-    title: "Poster Hari Raya Idul Adha",
-    description: "poster hari raya idul adha dengan desain yang menarik dan profesional. Dibuat menggunakan alat desain grafis seperti Canva untuk menciptakan visual yang memikat dan sesuai dengan tema hari raya idul adha.",
+    title: "Poster Idul Adha",
+    description: "Desain poster perayaan Hari Raya Idul Adha yang menarik dan meriah.",
     tags: ["Canva", "Pinterest"],
     link: "#",
     image: "/images/iduladha.png",
     category: 'Desain',
   },
-
   {
-    title: "Poster Perpisahan Kelas",
-    description: "poster perpisahan kelas dengan desain yang menarik dan profesional. Dibuat menggunakan alat desain grafis seperti Canva untuk menciptakan visual yang memikat dan sesuai dengan tema perpisahan kelas.",
+    title: "Poster Perpisahan",
+    description: "Desain poster kenang-kenangan perpisahan kelas yang berkesan.",
     tags: ["Canva", "Pinterest"],
     link: "#",
     image: "/images/kelas.png",
     category: 'Desain',
   },
-
 ];
 
 export default function Projects() {
-  const { ref, isInView } = useInViewAnimation();
   const [selectedProject, setSelectedProject] = useState<{ title: string; image: string } | null>(null);
   const [activeTab, setActiveTab] = useState<string>('Semua');
 
@@ -79,9 +75,9 @@ export default function Projects() {
   const designProjects = projects.filter(project => project.category === 'Desain');
 
   const renderProjectGrid = (items: Project[]) => (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
       {items.map((project, index) => (
-        <div key={`${project.title}-${index}`} className={`transition-all duration-700 ${isInView ? 'animate-scale-in' : 'opacity-0 scale-90'}`} style={{ transitionDelay: `${0.05 * index}s` }}>
+        <div key={`${project.title}-${index}`} className="fade-up-enter" style={{animationDelay: `${0.1 * index}s`}}>
           <ProjectCard
             {...project}
             onImageClick={() => project.image && setSelectedProject({ title: project.title, image: project.image })}
@@ -93,22 +89,25 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="py-20 px-4 sm:px-6 bg-white" ref={ref}>
+      <section id="projects" className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-4 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>Proyek Unggulan</h2>
-            <p className={`text-zinc-600 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.1s' }}>Pameran karya terbaik dan proyek yang sukses.</p>
+          <div className="mb-16 text-center fade-up-enter">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-white/50 border border-white/50 text-blue-600 font-bold text-xs tracking-widest uppercase mb-4 shadow-sm">Portfolio</div>
+            <h3 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight mb-6">Karya <span className="text-gradient-vibrant">Pilihan</span></h3>
+            <p className="text-slate-600 text-lg max-w-2xl mx-auto font-medium">
+              Jelajahi berbagai proyek yang telah saya kerjakan, dari pengembangan sistem web hingga eksplorasi desain grafis.
+            </p>
           </div>
 
-          <div className={`flex flex-wrap justify-center gap-4 mb-12 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`} style={{ transitionDelay: '0.2s' }}>
+          <div className="flex justify-center gap-3 mb-16 overflow-x-auto pb-4 fade-up-enter" style={{animationDelay: '0.1s'}}>
             {['Semua', 'Website', 'Desain'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+                className={`px-8 py-3 rounded-full font-bold transition-all duration-300 whitespace-nowrap ${
                   activeTab === tab
-                    ? 'bg-black text-white shadow-lg scale-105'
-                    : 'bg-zinc-100 text-zinc-600 hover:bg-zinc-200 hover:text-black hover:scale-105'
+                    ? 'bg-slate-800 text-white shadow-[0_8px_15px_rgba(0,0,0,0.1)] hover:-translate-y-1'
+                    : 'light-glass text-slate-600 hover:text-slate-900 hover:-translate-y-1'
                 }`}
               >
                 {tab}
@@ -119,23 +118,37 @@ export default function Projects() {
           <div className="space-y-16">
             {activeTab === 'Semua' && (
               <>
-                <div>
-                  <h3 className="text-xl font-semibold text-black mb-6 border-b pb-2">Proyek Website</h3>
+                <div className="fade-up-enter" style={{animationDelay: '0.2s'}}>
+                  <div className="flex items-center gap-4 mb-10">
+                    <h3 className="text-2xl font-black text-slate-800">Pengembangan Web</h3>
+                    <div className="h-px flex-1 bg-gradient-to-r from-blue-300 to-transparent"></div>
+                  </div>
                   {renderProjectGrid(websiteProjects)}
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-black mb-6 border-b pb-2">Proyek Desain</h3>
+                <div className="fade-up-enter" style={{animationDelay: '0.3s'}}>
+                  <div className="flex items-center gap-4 mb-10">
+                    <h3 className="text-2xl font-black text-slate-800">Desain Grafis</h3>
+                    <div className="h-px flex-1 bg-gradient-to-r from-purple-300 to-transparent"></div>
+                  </div>
                   {renderProjectGrid(designProjects)}
                 </div>
               </>
             )}
             {activeTab === 'Website' && (
-              <div>
+              <div className="fade-up-enter" style={{animationDelay: '0.2s'}}>
+                <div className="flex items-center gap-4 mb-10">
+                  <h3 className="text-2xl font-black text-slate-800">Pengembangan Web</h3>
+                  <div className="h-px flex-1 bg-gradient-to-r from-blue-300 to-transparent"></div>
+                </div>
                 {renderProjectGrid(websiteProjects)}
               </div>
             )}
             {activeTab === 'Desain' && (
-              <div>
+              <div className="fade-up-enter" style={{animationDelay: '0.2s'}}>
+                <div className="flex items-center gap-4 mb-10">
+                  <h3 className="text-2xl font-black text-slate-800">Desain Grafis</h3>
+                  <div className="h-px flex-1 bg-gradient-to-r from-purple-300 to-transparent"></div>
+                </div>
                 {renderProjectGrid(designProjects)}
               </div>
             )}

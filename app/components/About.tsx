@@ -1,64 +1,53 @@
 'use client';
 
 import Image from 'next/image';
-import { useInViewAnimation } from '../hooks/useInViewAnimation';
 
 export default function About() {
-  const { ref, isInView } = useInViewAnimation();
-
   return (
-
-    
-
-    <section id="about" className="py-20 px-4 sm:px-6 bg-white" ref={ref}>
-      <div className="max-w-4xl mx-auto">
-        <h2 className={`text-3xl font-bold text-black mb-12 transition-all duration-700 ${isInView ? 'animate-slide-up' : 'opacity-0 translate-y-10'}`}>Tentang Saya</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* Profile Photo */}
-          <div className={`md:col-span-1 flex justify-center transition-all duration-700 ${isInView ? 'animate-slide-left' : 'opacity-0 -translate-x-10'}`}>
-            <div className="relative">
-              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-blue-400 to-purple-600 p-1 animate-glow">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center overflow-hidden">
-                  <Image
-                    src="/images/profile.jpg"
-                    alt="Profile"
-                    width={224}
-                    height={224}
-                    className="w-full h-full object-cover"
-                    priority
-                  />
-                </div>
+    <section id="about" className="py-24 px-6 relative">
+      <div className="max-w-6xl mx-auto">
+        <div className="light-glass rounded-[2.5rem] p-8 md:p-16 border-white/60">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            
+            {/* Profile Photo */}
+            <div className="lg:col-span-5 relative fade-up-enter group">
+              <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden hover-lift border-4 border-white/50">
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Profile"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  priority
+                />
               </div>
-              <div className="absolute -bottom-2 -right-2 px-4 py-2 bg-blue-500 text-white rounded-full font-semibold text-sm animate-float">
-                18+ Years
+              {/* Vibrant Accent */}
+              <div className="absolute -inset-6 bg-gradient-to-tr from-blue-400 via-purple-400 to-pink-400 rounded-[2.5rem] z-[-1] opacity-30 blur-2xl group-hover:opacity-50 transition-opacity duration-500"></div>
+            </div>
+
+            {/* Bio */}
+            <div className="lg:col-span-7 fade-up-enter" style={{animationDelay: '0.1s'}}>
+              <div className="mb-8">
+                <div className="inline-block px-4 py-1.5 rounded-full bg-white/50 border border-white/50 text-purple-600 font-bold text-xs tracking-widest uppercase mb-4 shadow-sm">Tentang Saya</div>
+                <h3 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight leading-tight">Mengenal Lebih <span className="text-gradient-vibrant">Jauh</span></h3>
+              </div>
+              
+              <div className="text-lg text-slate-600 leading-relaxed space-y-6">
+                <p>
+                  <strong className="text-slate-800 font-bold">Saya menguasai pengembangan aplikasi web dan mobile</strong>, serta memiliki ketertarikan yang sangat mendalam pada dunia desain antarmuka (UI/UX) untuk menciptakan tampilan yang tidak hanya fungsional, tetapi juga indah dan interaktif.
+                </p>
+                <p>
+                  Fokus utama saya adalah menciptakan pengalaman digital yang mulus (*seamless*). Saya percaya bahwa setiap detail kecil—mulai dari bayangan tombol hingga kecepatan animasi—sangat berpengaruh pada kenyamanan pengguna.
+                </p>
+                <p>
+                  Di luar koding dan mendesain, saya adalah pendengar yang baik dan komunikator yang aktif, memastikan setiap proyek tim berjalan dengan kolaborasi yang harmonis.
+                </p>
               </div>
             </div>
-          </div>
-
-          {/* Bio and Stats */}
-          <div className={`md:col-span-2 transition-all duration-700 ${isInView ? 'animate-slide-right' : 'opacity-0 translate-x-10'}`}>
-            <div className="space-y-4 text-zinc-600 mb-8">
-              <p className="text-lg">
-                Saya menguasai pengembangan aplikasi web dan mobile, serta memiliki ketertarikan dalam desain
-UI/UX untuk menciptakan tampilan yang menarik dan fungsional. Didukung dengan pemahaman
-yang baik mengenai berbagai jenis perangkat seluler (smartphone), saya mampu menyesuaikan
-solusi teknologi dengan kebutuhan pengguna. Saya juga memiliki kemampuan bekerja sama dalam
-tim, disiplin, serta komunikasi yang baik.
-              </p>
-              </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-8">
-             
-                
-        
-            </div>
+            
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 }
