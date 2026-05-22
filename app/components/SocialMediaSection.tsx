@@ -53,11 +53,11 @@ const socialLinks = [
 
 export default function SocialMediaSection() {
   return (
-    <footer className="py-10 border-t border-slate-200/50 relative light-glass-nav z-10">
+    <footer className="py-10 border-t border-white/10 relative dark-glass-nav z-10">
       <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         
         <div className="text-center md:text-left">
-          <p className="text-slate-600 font-bold text-sm">
+          <p className="text-slate-400 font-bold text-sm">
             © {new Date().getFullYear()} Aditya. All rights reserved.
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function SocialMediaSection() {
               target="_blank"
               rel="noopener noreferrer"
               title={social.name}
-              className={`w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shadow-sm transition-all duration-300 ${social.hover} hover:-translate-y-1 hover:shadow-md`}
+              className={`w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-slate-300 shadow-sm transition-all duration-300 ${social.hover} hover:-translate-y-1 hover:shadow-md`}
             >
               {social.icon}
             </a>

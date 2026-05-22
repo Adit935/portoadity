@@ -92,9 +92,9 @@ export default function Projects() {
       <section id="projects" className="py-24 px-6 relative">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16 text-center fade-up-enter">
-            <div className="inline-block px-4 py-1.5 rounded-full bg-white/50 border border-white/50 text-blue-600 font-bold text-xs tracking-widest uppercase mb-4 shadow-sm">Portfolio</div>
-            <h3 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight mb-6">Karya <span className="text-gradient-vibrant">Pilihan</span></h3>
-            <p className="text-slate-600 text-lg max-w-2xl mx-auto font-medium">
+            <div className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/10 text-white font-bold text-xs tracking-widest uppercase mb-4 shadow-sm">Portfolio</div>
+            <h3 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-6">Karya <span className="text-gradient-subtle">Pilihan</span></h3>
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto font-medium">
               Jelajahi berbagai proyek yang telah saya kerjakan, dari pengembangan sistem web hingga eksplorasi desain grafis.
             </p>
           </div>
@@ -106,8 +106,8 @@ export default function Projects() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-8 py-3 rounded-full font-bold transition-all duration-300 whitespace-nowrap ${
                   activeTab === tab
-                    ? 'bg-slate-800 text-white shadow-[0_8px_15px_rgba(0,0,0,0.1)] hover:-translate-y-1'
-                    : 'light-glass text-slate-600 hover:text-slate-900 hover:-translate-y-1'
+                    ? 'bg-white text-black shadow-[0_8px_15px_rgba(255,255,255,0.1)] hover:-translate-y-1'
+                    : 'dark-glass text-slate-400 hover:text-white hover:-translate-y-1'
                 }`}
               >
                 {tab}
@@ -120,15 +120,15 @@ export default function Projects() {
               <>
                 <div className="fade-up-enter" style={{animationDelay: '0.2s'}}>
                   <div className="flex items-center gap-4 mb-10">
-                    <h3 className="text-2xl font-black text-slate-800">Pengembangan Web</h3>
-                    <div className="h-px flex-1 bg-gradient-to-r from-blue-300 to-transparent"></div>
+                    <h3 className="text-2xl font-black text-white">Pengembangan Web</h3>
+                    <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent"></div>
                   </div>
                   {renderProjectGrid(websiteProjects)}
                 </div>
                 <div className="fade-up-enter" style={{animationDelay: '0.3s'}}>
                   <div className="flex items-center gap-4 mb-10">
-                    <h3 className="text-2xl font-black text-slate-800">Desain Grafis</h3>
-                    <div className="h-px flex-1 bg-gradient-to-r from-purple-300 to-transparent"></div>
+                    <h3 className="text-2xl font-black text-white">Desain Grafis</h3>
+                    <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent"></div>
                   </div>
                   {renderProjectGrid(designProjects)}
                 </div>
@@ -137,8 +137,8 @@ export default function Projects() {
             {activeTab === 'Website' && (
               <div className="fade-up-enter" style={{animationDelay: '0.2s'}}>
                 <div className="flex items-center gap-4 mb-10">
-                  <h3 className="text-2xl font-black text-slate-800">Pengembangan Web</h3>
-                  <div className="h-px flex-1 bg-gradient-to-r from-blue-300 to-transparent"></div>
+                  <h3 className="text-2xl font-black text-white">Pengembangan Web</h3>
+                  <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent"></div>
                 </div>
                 {renderProjectGrid(websiteProjects)}
               </div>
@@ -146,8 +146,8 @@ export default function Projects() {
             {activeTab === 'Desain' && (
               <div className="fade-up-enter" style={{animationDelay: '0.2s'}}>
                 <div className="flex items-center gap-4 mb-10">
-                  <h3 className="text-2xl font-black text-slate-800">Desain Grafis</h3>
-                  <div className="h-px flex-1 bg-gradient-to-r from-purple-300 to-transparent"></div>
+                  <h3 className="text-2xl font-black text-white">Desain Grafis</h3>
+                  <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent"></div>
                 </div>
                 {renderProjectGrid(designProjects)}
               </div>
