@@ -34,15 +34,12 @@ export default function About() {
               
               <div className="text-lg text-slate-400 leading-relaxed space-y-6">
                 <p>
-                  <strong className="text-white font-bold">Saya menguasai pengembangan aplikasi web dan mobile</strong>, serta memiliki ketertarikan yang sangat mendalam pada dunia desain antarmuka (UI/UX) untuk menciptakan tampilan yang tidak hanya fungsional, tetapi juga indah dan interaktif.
+                  <strong className="text-white font-bold">Saya memiliki ketertarikan yang besar pada dunia desain grafis dan UI/UX</strong>, dengan fokus menciptakan tampilan yang tidak hanya menarik secara visual, tetapi juga fungsional dan nyaman digunakan. Saya senang mengeksplorasi ide, detail visual, serta mengembangkan desain yang mampu menyampaikan pesan dan memberikan pengalaman pengguna yang baik.
                 </p>
                 <p>
-                  Fokus utama saya adalah menciptakan pengalaman digital yang mulus (*seamless*). Saya percaya bahwa setiap detail kecil—mulai dari bayangan tombol hingga kecepatan animasi—sangat berpengaruh pada kenyamanan pengguna.
+                  Fokus utama saya adalah menciptakan desain yang modern, sederhana, dan interaktif. Saya terus belajar dan mengembangkan kemampuan melalui eksplorasi serta berbagai proyek desain.
                 </p>
-                <p>
-                  Di luar koding dan mendesain, saya adalah pendengar yang baik dan komunikator yang aktif, memastikan setiap proyek tim berjalan dengan kolaborasi yang harmonis.
-                </p>
-              </div>
+                 </div>
             </div>
             
           </div>

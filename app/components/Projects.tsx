@@ -10,7 +10,6 @@ interface Project {
   tags: string[];
   link?: string;
   image?: string;
-  featured?: boolean;
   category: 'Website' | 'Desain';
 }
 
@@ -21,7 +20,6 @@ const projects: Project[] = [
     tags: ["PHP", "MySQL", "Draw.io"],
     link: "#",
     image: "/images/image1.png",
-    featured: true,
     category: 'Website',
   },
   {
@@ -38,7 +36,6 @@ const projects: Project[] = [
     tags: ["Canva", "Figma"],
     link: "#",
     image: "/images/califblue.png",
-    featured: true,
     category: 'Desain',
   },
   {
