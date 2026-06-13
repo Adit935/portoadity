@@ -31,11 +31,11 @@ const projects: Project[] = [
     category: 'Website',
   },
   {
-    title: "Poster Parfum",
-    description: "Desain poster parfum yang menarik dan profesional untuk keperluan promosi produk.",
-    tags: ["Canva", "Figma"],
+    title: "Poster manipulasi",
+    description: "Desain poster manipulasi kreatif dengan tema futuristik dan elemen visual yang menarik.",
+    tags: ["pinterest", "Figma"],
     link: "#",
-    image: "/images/califblue.png",
+    image: "/images/asaltempel.png",
     category: 'Desain',
   },
   {
